@@ -49,7 +49,25 @@ public class WelcomeEmployee {
 		}
 	}
 	
-	
+	public static void wageForMonth() {
+		for(int day=1 ; day<=numWorkingDays ; day++) {
+			int empCheck=(int) (Math.floor(Math.random() * 10) % 3);
+			
+			switch(empCheck) {
+			case 1:
+				workingHours=4;
+				break;
+			case 2:
+				workingHours=8;
+				break;
+			default:
+				System.out.println("Employee is absent");
+			}
+				int salary= workingHours * wagePerHour;
+				totalSalary=totalSalary + salary;
+				System.out.println("Total Salary: " + totalSalary);
+		}
+	}
 	
 	public static void main(String[] args) {
 		
@@ -58,6 +76,6 @@ public class WelcomeEmployee {
 		empWage();
 		empFullTime();
 		empWageUsingCase();
-		//wageForMonth();
+		wageForMonth();
 	}
 }
