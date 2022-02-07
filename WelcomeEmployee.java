@@ -4,6 +4,7 @@ public class WelcomeEmployee {
 	static int IS_FULL_TIME = 1;
 	static int wagePerHour = 20;
 	static int partTimeHour = 8;
+	static int fullDayHour = 8;
 	
 	public static void empPresentAbsent() {
 		double empCheck = Math.floor(Math.random() * 10) % 2;
@@ -18,10 +19,17 @@ public class WelcomeEmployee {
 		System.out.println("Daily Employee Wage for Part Time is: " + empWage);
 	}
 	
+	public static void empFullTime()
+	{
+		int empWage = wagePerHour * fullDayHour;
+		System.out.println("Daily Employee Wage for Full Time is: " + empWage);
+	}
+	
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to Employee Wage Computation Program");
 		empPresentAbsent();
 		empWage();
+		empFullTime();
 	}
 }
