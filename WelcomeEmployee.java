@@ -11,6 +11,7 @@ public class WelcomeEmployee {
 	static int numWorkingDays = 20;
 	static int workingHours = 0;
 	static int totalSalary = 0;
+	static int totalWorkingHours = 0;
 	
 	public static void empPresentAbsent() {
 		double empCheck = Math.floor(Math.random() * 10) % 2;
@@ -69,6 +70,35 @@ public class WelcomeEmployee {
 		}
 	}
 	
+	public static void finalEmpWages() {
+		for(int day=1 ; day<=numWorkingDays ; day++) {
+			if ((totalWorkingHours <= 100) || (day <= 20)) {
+				int empCheck=(int) (Math.floor(Math.random() * 10) % 3);
+					
+					switch(empCheck) {
+					case 1:
+						workingHours=4;
+						System.out.println("Full Day");
+						break;
+					case 2:
+						workingHours=8;
+						System.out.println("Half Day");
+						break;
+					default:
+						System.out.println("Employee is absent");
+					}
+			
+		
+				
+				int salary= workingHours * wagePerHour;
+				totalSalary=totalSalary + salary;
+				totalWorkingHours= totalWorkingHours + workingHours;
+				System.out.println("Number of working days: " + day);
+				System.out.println("Total working hours: " + totalWorkingHours);
+				System.out.println("Total Salary: " + totalSalary);
+			}
+	}
+	}
 	public static void main(String[] args) {
 		
 		System.out.println("Welcome to Employee Wage Computation Program");
@@ -77,5 +107,6 @@ public class WelcomeEmployee {
 		empFullTime();
 		empWageUsingCase();
 		wageForMonth();
+		finalEmpWages();
 	}
 }
